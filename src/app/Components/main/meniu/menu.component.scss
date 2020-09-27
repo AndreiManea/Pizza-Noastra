@@ -1,0 +1,397 @@
+//Bootstrap mixins
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+
+.container {
+  max-width: 100%;
+  background-color: #F6DA63;
+  font-family: "Cambria Math";
+
+
+  h2 {
+    font-family: Constantia;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2.2em;
+    letter-spacing: 2.5px;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  hr {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    margin-bottom: 0;
+
+    &:before {
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: black;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
+  }
+
+  .filter{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    .btn{
+      font-size: 4vw;
+      letter-spacing: 1px;
+      padding: 10px 10px;
+      margin: 0 1px;
+      &:focus{
+        box-shadow: none;
+      }
+    }
+    .btn-warning{
+
+      &:focus{
+        box-shadow: none;
+      }
+
+      &:active, &:visited, &:focus, &:focus-within, &:hover{
+        color:white;
+        background: #DA2D2D;
+      }
+    }
+   }
+
+
+
+  .card {
+    background-color: inherit;
+    margin: auto;
+    margin-bottom: 20px;
+    border: none;
+    padding: 15px 15px;
+
+    img {
+      width: 100%;
+    }
+
+    .card-body {
+      .card-title {
+        text-align: center;
+        font-size: 1.4em;
+      }
+
+      .card-text {
+        text-align: center;
+      }
+
+      .row {
+        margin-top: 20px;
+
+        .col-6 {
+          p {
+
+            margin-top: 10px;
+            margin-bottom: 0;
+          }
+
+          .pret{
+            font-size: 1.1em;
+          }
+          .gramajMediu, .gramajMare{
+            width: 100%;
+            font-size: 1em;
+          }
+
+          .medie {
+            margin-top: 20px;
+            width: 50px;
+          }
+
+          .mare {
+            width: 70px;
+          }
+        }
+      }
+
+      div {
+        text-align: center;
+
+        .btn-danger {
+          margin-top: 30px;
+          font-size: 1.2em;
+        }
+      }
+    }
+
+  }
+
+  .row.extra {
+    .col-10.offset-1 {
+      .row.extras {
+        .col-4 {
+          h4, p {
+            font-size: 1.1em;
+          }
+
+          h4 {
+            padding-top: 3px;
+          }
+
+        }
+        .col-4.medie{
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+
+  .transport {
+    margin-top: 20px;
+    padding-bottom: 30px;
+    p {
+      width: 100%;
+      text-align: center;
+      font-size: 1em;
+      margin-bottom: 0;
+      padding-bottom: 1em;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .container {
+    h2 {
+      font-size: 2.8em;
+    }
+
+    h3 {
+      font-size: 1.9em;
+    }
+
+    .filter {
+      margin-bottom: 20px;
+      .btn {
+        margin: 0 2px;
+        font-size: 3vw;
+      }
+    }
+
+    .card {
+      .card-body {
+        .card-title {
+          font-size: 1.6em;
+        }
+
+        .card-text {
+          font-size: 1.2em;
+        }
+
+        .row {
+          .col-6 {
+            font-size: 1.1em;
+          }
+        }
+
+        div {
+          .btn-danger {
+            font-size: 1.4em;
+          }
+        }
+      }
+    }
+
+    .row.extra {
+      .col-10.offset-1 {
+        .row.extras {
+          .col-4 {
+            h4, p {
+              font-size: 1.2em;
+            }
+
+            h4 {
+              padding-top: 2.8px;
+            }
+
+          }
+        }
+      }
+    }
+    .transport {
+
+      h3 {
+        font-size: 1.6em;
+        letter-spacing: 2px;
+      }
+
+      p {
+        font-size: 1.2em;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .container {
+    hr {
+      width: 45%;
+    }
+
+    h3 {
+      font-size: 2.2em;
+    }
+
+    .filter {
+      margin-bottom: 50px;
+      justify-content: flex-end;
+      .btn {
+        font-size: 2vw;
+      }
+    }
+
+    .card {
+      .card-body {
+        .row{
+          .col-6{
+            .gramajMediu{
+            }
+            .gramajMare{
+            }
+          }
+        }
+        div {
+          .btn-danger {
+            font-size: 1.21em;
+          }
+        }
+      }
+    }
+
+    .row.extra {
+      .col-10.offset-1 {
+        .row.extras {
+          .col-4 {
+            h4, p {
+              font-size: 1.4em;
+            }
+
+            h4 {
+              padding-top: 3px;
+            }
+
+          }
+        }
+      }
+    }
+
+    .transport {
+
+      font-size: 1.4em;
+    }
+  }
+
+}
+
+@include media-breakpoint-up(lg) {
+  .container {
+    hr {
+      width: 35%;
+    }
+
+    h3 {
+      font-size: 2.5em;
+      margin-top: 30px;
+    }
+
+    .filter {
+      justify-content: center;
+      .btn {
+        font-size: 1.5vw;
+      }
+    }
+
+    .card {
+      .card-body {
+        div {
+          .btn-danger {
+           display: none;
+          }
+        }
+      }
+    }
+
+    .row.extra {
+      .col-10.offset-1 {
+        .row.extras {
+          .col-4 {
+            h4, p {
+              font-size: 1.6em;
+            }
+
+
+
+          }
+        }
+      }
+    }
+
+
+    .transport {
+
+      font-size: 1.5em;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .container {
+    h2 {
+      font-size: 4em;
+    }
+
+    hr {
+      width: 25%;
+    }
+
+    .filter {
+      margin-top: 20px;
+      .btn {
+      }
+    }
+
+
+    .card {
+      .card-body {
+        .card-title {
+          font-size: 1.8em;
+        }
+
+        .card-text {
+          font-size: 1.5em;
+        }
+
+        .row {
+          .col-6 {
+            font-size: 1.2em;
+          }
+        }
+
+      }
+    }
+
+    .transport {
+
+      margin-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+}

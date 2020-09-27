@@ -1,0 +1,146 @@
+//Bootstrap mixins
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+//Fonts
+$primaryFont: "Constantia";
+
+//Colors
+$primaryColor: #F6DA63;
+$secondaryColor: #DA2D2D;
+$thirdColor: #6DCF53;
+
+* {
+  font-family: $primaryFont;
+}
+
+#logo {
+  width: 70px;
+  height: 70px;
+}
+
+.navbar {
+  background-color: $secondaryColor;
+
+  .navbar-toggler {
+    border-color: rgba(0, 0, 0, .2);
+    &:focus{
+      border-color: rgba(0, 0, 0, .2);
+      outline-color: transparent;
+    }
+  }
+
+  .navbar-brand {
+    color: $primaryColor;
+    font-size: 1.2325em;
+  }
+
+  #navbarMenu {
+    .navbar-nav {
+      border-top: 1.5px solid $primaryColor;
+
+      .nav-item {
+
+        .nav-link {
+          color: $primaryColor;
+          text-align: center;
+          font-size: 1.2325em;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar {
+    .navbar-brand {
+      font-size: 1.8em;
+    }
+
+    #navbarMenu {
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .navbar {
+    .navbar-brand {
+      font-size: 2em;
+    }
+
+    #navbarMenu {
+      .navbar-nav {
+        border: none;
+
+        .nav-item {
+          padding-right: 20px;
+          .active{
+            color: #B8EFAA;
+            border-bottom: 2px solid $thirdColor ;
+          }
+          .nav-link {
+            font-size: 1.7em;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #logo{
+    width: 80px;
+    height: 80px;
+  }
+
+  .navbar {
+    .navbar-brand {
+      font-size: 2.1em;
+    }
+
+    #navbarMenu {
+      .navbar-nav {
+        .nav-item {
+          padding-right: 40px;
+          .nav-link {
+            font-size: 1.8em;
+            &:hover{
+              color: $thirdColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+
+  .navbar {
+    .navbar-brand {
+      margin-left: 5%;
+    }
+
+    #navbarMenu {
+      .navbar-nav {
+        .nav-item {
+          padding-right: 60px;
+          .nav-link {
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<div class="container">
+  <h2>Meniu</h2>
+  <hr>
+  <div class="filter">
+    <button type="button" [ngClass]="{'btn': true, 'btn-warning': true, 'btn-danger': active}"  (click)="allPizzas()">Toate</button>
+    <button type="button" class="btn btn-warning" (click)="filterPizzas('porc')">Porc</button>
+    <button type="button" class="btn btn-warning" (click)="filterPizzas('pui')">Pui</button>
+    <button type="button" class="btn btn-warning" (click)="filterPizzas('peste')">Pește</button>
+    <button type="button" class="btn btn-warning" (click)="filterPizzas('vegetariana')">Vegetariană</button>
+  </div>
+  <div class="row">
+    <div *ngFor="let pizza of pizzas" class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 col-xl-3">
+      <div class="card">
+        <img src="{{pizza.imagine}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pizza.nume}}</h5>
+          <p class="card-text">{{pizza.ingrediente}}</p>
+          <div class="row">
+            <div class="col-6 col-xl-4 offset-xl-2">
+              <img class="medie" src="../../../../assets/Images/pizzaSize.png" alt="">
+              <p>Medie</p>
+              <p>32 cm</p>
+              <p class="gramajMediu">{{pizza.gramajMedie}}g</p>
+              <p class="pret"><strong>{{pizza.pretMedie}} lei</strong> </p>
+            </div>
+            <div class="col-6 col-xl-4">
+              <img class="mare" src="../../../../assets/Images/pizzaSize.png" alt="">
+              <p>Mare</p>
+              <p>45 cm</p>
+              <p class="gramajMare">{{pizza.gramajMare}}g</p>
+              <p class="pret"><strong>{{pizza.pretMare}} lei</strong></p>
+            </div>
+          </div>
+          <div>
+            <a href="tel:0759503346" class="btn btn-danger">Comanda acum</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Extra Topping (30g 50g)</h3>
+  <div class="row extra" >
+    <div class="col-10 offset-1 offset-sm-2 col-xl-8 offset-xl-3">
+      <div class="row extras" *ngFor="let extra of extras">
+      <div class="col-4">
+        <p>{{extra.nume}}</p>
+      </div>
+      <div class="col-4 medie">
+        <h4>Medie</h4>
+        <p class="pretMediu">{{extra.pretMediu}} lei</p>
+      </div>
+      <div class="col-4">
+        <h4>Mare</h4>
+        <p class="pretMare">{{extra.pretXXL}} lei</p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="transport">
+    <h3>Transport</h3>
+    <p>Livrare gratuită în Ghioroc</p>
+    <p>Transport gratuit la comenzi peste 50 lei</p>
+    <p>10 lei transport sub comandă de 50 lei</p>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+@import "src/app/Components/main/contact/contact.component";
+
+.container{
+  h1{
+    padding-top: 20px;
+    text-align: center;
+  }
+  #last{
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+  p{
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+
+  }
+  .btn-warning{
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    color:black;
+    background-color: #FFD72F;
+    border-width: 2px;
+    padding: 10px 40px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .container{
+    h1{
+      font-size: 3em;
+    }
+    p{
+      font-size: 1.4em;
+    }
+    .btn-warning{
+      font-size: 1.3em;
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .container{
+    h1{
+      padding-top: 50px;
+    }
+    hr{
+      width: 55%;
+    }
+    p{
+      margin-top: 30px;
+    }
+    .btn-warning{
+      margin-top: 10px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .container{
+    hr{
+      width: 45%;
+    }
+    h1{
+      font-size: 3.3em;
+    }
+    p{
+      font-size: 1.55em;
+    }
+    .btn-warning{
+      font-size: 1.5em;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl){
+  .container{
+    h1{
+      font-size: 4em;
+    }
+    p{
+      font-size: 2em;
+    }
+    .btn-warning{
+      margin-top: 40px;
+      padding: 10px 50px;
+      margin-bottom: 74px;
+      font-size: 1.8em;
+    }
+    hr{
+      width: 35%;
+    }
+  }
+}
+
