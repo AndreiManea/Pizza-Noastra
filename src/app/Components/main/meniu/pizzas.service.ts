@@ -6,6 +6,78 @@ import {Subject} from 'rxjs';
 })
 export class PizzasService {
   public pizzas: Pizza[] =  [
+     {
+      nume: 'Box Crispy',
+      ingrediente1: 'crispy',
+      ingrediente2: 'cartofi prăjiți',
+      imagine: '../../../../assets/Images/Box.png',
+      pret: 30,
+      gramajCrispy1: 300,
+      gramajCrispy2: 200,
+      tip: 'pui',
+      crispy: true,
+      box: true
+    },
+     {
+      nume: 'Box Aripi',
+      ingrediente1: 'aripi',
+      ingrediente2: 'cartofi prăjiți',
+      imagine: '../../../../assets/Images/Box.png',
+      pret: 30,
+      gramajCrispy1: 300,
+      gramajCrispy2: 200,
+      tip: 'pui',
+      crispy: true,
+      box: true
+    },
+    {
+      nume: 'Box Mozzarella',
+      ingrediente1: 'mozzarella',
+      ingrediente2: 'cartofi prăjiți',
+      imagine: '../../../../assets/Images/Box_mozzarella.png',
+      pret: 25,
+      gramajCrispy1: 300,
+      gramajCrispy2: 200,
+      tip: 'vegetariana',
+      crispy: true,
+      box: true
+    },
+     {
+      nume: 'Bucket Aripi/Crispy',
+      ingrediente1: 'aripi',
+      ingrediente2: 'crispy',
+      imagine: '../../../../assets/Images/Bucket.png',
+      pret: 55,
+      gramajCrispy1: 500,
+      gramajCrispy2: 500,
+      tip: 'pui',
+      crispy: true,
+      bucket: true
+    },
+     {
+      nume: 'Bucket Aripi/Mozzarella',
+      ingrediente1: 'aripi',
+      ingrediente2: 'mozzarella',
+      imagine: '../../../../assets/Images/Bucket.png',
+      pret: 55,
+      gramajCrispy1: 500,
+      gramajCrispy2: 500,
+      tip: 'pui',
+      crispy: true,
+      bucket: true
+    },
+     {
+      nume: 'Bucket Crispy/Mozzarella',
+      ingrediente1: 'crispy',
+      ingrediente2: 'mozzarella',
+      imagine: '../../../../assets/Images/Bucket.png',
+      pret: 55,
+      gramajCrispy1: 500,
+      gramajCrispy2: 500,
+      tip: 'pui',
+      crispy: true,
+      bucket: true
+    },
     {
       nume: 'Pizza Casei',
       ingrediente: 'Sos de Roșii, Mozarella, Șuncă De Praga, Cașcaval, Ardei, Ciuperci, Prosciutto Crudo, Parmezan',
@@ -218,6 +290,36 @@ export class PizzasService {
     },
     ];
   public extras = [
+    {
+      nume: "Cartofi Prăjiți",
+      gramaj: 200,
+      pret: 5,
+      crispy: true
+    },
+    {
+      nume: "Sos Maioneză",
+      gramaj: 80,
+      pret: 5,
+      crispy: true
+    },
+    {
+      nume: "Sos Usturoi",
+      gramaj: 80,
+      pret: 5,
+      crispy: true
+    },
+    {
+      nume: "Sos Picant",
+      gramaj: 80,
+      pret: 5,
+      crispy: true
+    },
+    {
+      nume: "Sos Verdețuri",
+      gramaj: 80,
+      pret: 5,
+      crispy: true
+    },
     {
       nume: 'Șuncă De Praga',
       pretMediu: 3,

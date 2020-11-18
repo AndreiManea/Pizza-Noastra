@@ -13,45 +13,69 @@
       <div class="card">
         <img src="{{pizza.imagine}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{pizza.nume}}</h5>
-          <p class="card-text">{{pizza.ingrediente}}</p>
-          <div class="row">
-            <div class="col-6 col-xl-4 offset-xl-2">
+          <h5 class="card-title" *ngIf="pizza.nume !== 'Box Mozzarella'" >{{pizza.nume}}</h5>
+          <h5 class="card-title" style="width: calc(100% + 1.25rem);" *ngIf="pizza.nume === 'Box Mozzarella'">Box Mozzarella</h5>
+          <p class="card-text" *ngIf="pizza.ingrediente">{{pizza.ingrediente}}</p>
+          <p class="card-text card-text--crispy" *ngIf="pizza.ingrediente1"><strong>{{pizza.gramajCrispy1}}g</strong> {{pizza.ingrediente1}}</p>
+          <p class="card-text card-text--crispy" *ngIf="pizza.ingrediente2"><strong>{{pizza.gramajCrispy2}}g</strong> {{pizza.ingrediente2}}</p>
+          <p class="card-text card-text--sauce" *ngIf="pizza.box"><strong>Sos inclus</strong></p>
+          <p class="card-text card-text--sauce" *ngIf="pizza.bucket"><strong>Nu include sos sau cartofi prăjiți</strong></p>
+          <div [ngClass]="{'row': true,
+                           'row--crispy--pret': pizza.crispy}">
+            <div class="col-6 col-xl-4 offset-xl-2" *ngIf="pizza.gramajMedie">
               <img class="medie" src="../../../../assets/Images/pizzaSize.png" alt="">
               <p>Medie</p>
               <p>32 cm</p>
               <p class="gramajMediu">{{pizza.gramajMedie}}g</p>
               <p class="pret"><strong>{{pizza.pretMedie}} lei</strong> </p>
             </div>
-            <div class="col-6 col-xl-4">
+            <div class="col-6 col-xl-4" *ngIf="pizza.gramajMare">
               <img class="mare" src="../../../../assets/Images/pizzaSize.png" alt="">
               <p>Mare</p>
               <p>45 cm</p>
               <p class="gramajMare">{{pizza.gramajMare}}g</p>
               <p class="pret"><strong>{{pizza.pretMare}} lei</strong></p>
             </div>
+            <div class="col-12" *ngIf="pizza.crispy">
+              <p class="pret pret--crispy" ><strong>{{pizza.pret}} lei</strong></p>
+            </div>
           </div>
           <div>
-            <a href="tel:0759503346" class="btn btn-danger">Comanda acum</a>
+            <a href="tel:0759503346" [ngClass]="{
+              'btn': true,
+              'btn-danger': true,
+              'btn--crispy': pizza.crispy}">Comanda acum</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <h3>Extra Topping (30g 50g)</h3>
+  <h3>Extras Crispy</h3>
+  <div class="row extra row--crispy" *ngFor="let extra of extras">
+          <div class="col-4 col-4--crispy" *ngIf="extra.crispy">
+            <p class="p__crispy">{{extra.nume}}</p>
+          </div>
+          <div class="col-4 col-4--crispy" style="padding-left: 0.8rem;" *ngIf="extra.crispy">
+            <p class="p__crispy">{{extra.gramaj}}g</p>
+          </div>
+          <div class="col-4 col-4--crispy" *ngIf="extra.crispy">
+            <p class="p__crispy">{{extra.pret}} lei</p>
+  </div>
+  </div>
+  <h3>Extras Pizza (30g 50g)</h3>
   <div class="row extra" >
     <div class="col-10 offset-1 offset-sm-2 col-xl-8 offset-xl-3">
       <div class="row extras" *ngFor="let extra of extras">
-      <div class="col-4">
+      <div class="col-4" *ngIf="!extra.crispy">
         <p>{{extra.nume}}</p>
       </div>
-      <div class="col-4 medie">
+      <div class="col-4 medie" *ngIf="!extra.crispy">
         <h4>Medie</h4>
-        <p class="pretMediu">{{extra.pretMediu}} lei</p>
+        <p class="pretMediu" *ngIf="!extra.crispy">{{extra.pretMediu}} lei</p>
       </div>
-      <div class="col-4">
+      <div class="col-4" *ngIf="!extra.crispy">
         <h4>Mare</h4>
-        <p class="pretMare">{{extra.pretXXL}} lei</p>
+        <p class="pretMare" *ngIf="!extra.crispy">{{extra.pretXXL}} lei</p>
       </div>
     </div>
     </div>
