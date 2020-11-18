@@ -3,12 +3,10 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
-
 .container {
   max-width: 100%;
-  background-color: #F6DA63;
+  background-color: #f6da63;
   font-family: "Cambria Math";
-
 
   h2 {
     font-family: Constantia;
@@ -44,33 +42,35 @@
     }
   }
 
-  .filter{
+  .filter {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-    .btn{
+    .btn {
       font-size: 4vw;
       letter-spacing: 1px;
       padding: 10px 10px;
       margin: 0 1px;
-      &:focus{
+
+      &:focus {
         box-shadow: none;
       }
     }
-    .btn-warning{
-
-      &:focus{
+    .btn-warning {
+      &:focus {
         box-shadow: none;
       }
 
-      &:active, &:visited, &:focus, &:focus-within, &:hover{
-        color:white;
-        background: #DA2D2D;
+      &:active,
+      &:visited,
+      &:focus,
+      &:focus-within,
+      &:hover {
+        color: white;
+        background: #da2d2d;
       }
     }
-   }
-
-
+  }
 
   .card {
     background-color: inherit;
@@ -91,22 +91,31 @@
 
       .card-text {
         text-align: center;
+        &--crispy {
+          margin-bottom: 0;
+        }
       }
 
       .row {
         margin-top: 20px;
-
+        &--crispy--pret {
+          margin-top: 0.4em;
+        }
+        .pret--crispy {
+          font-size: 1.3em;
+        }
         .col-6 {
           p {
-
             margin-top: 10px;
             margin-bottom: 0;
           }
 
-          .pret{
+          .pret {
             font-size: 1.1em;
           }
-          .gramajMediu, .gramajMare{
+
+          .gramajMediu,
+          .gramajMare {
             width: 100%;
             font-size: 1em;
           }
@@ -129,25 +138,39 @@
           margin-top: 30px;
           font-size: 1.2em;
         }
+        .btn--crispy {
+          margin-top: 0;
+        }
       }
     }
+  }
 
+  .row--crispy {
+    margin-left: 8.333333%;
   }
 
   .row.extra {
+    .col-4--crispy {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      .p__crispy {
+        font-size: 1.1rem;
+      }
+    }
     .col-10.offset-1 {
       .row.extras {
         .col-4 {
-          h4, p {
+          h4,
+          p {
             font-size: 1.1em;
           }
 
           h4 {
             padding-top: 3px;
           }
-
         }
-        .col-4.medie{
+        .col-4.medie {
           padding-left: 25px;
         }
       }
@@ -185,6 +208,10 @@
       }
     }
 
+    .row--crispy {
+      margin-left: 16.666667%;
+    }
+
     .card {
       .card-body {
         .card-title {
@@ -210,23 +237,27 @@
     }
 
     .row.extra {
+      .col-4--crispy {
+        .p__crispy {
+          font-size: 1.4rem;
+        }
+      }
       .col-10.offset-1 {
         .row.extras {
           .col-4 {
-            h4, p {
+            h4,
+            p {
               font-size: 1.2em;
             }
 
             h4 {
               padding-top: 2.8px;
             }
-
           }
         }
       }
     }
     .transport {
-
       h3 {
         font-size: 1.6em;
         letter-spacing: 2px;
@@ -260,11 +291,11 @@
 
     .card {
       .card-body {
-        .row{
-          .col-6{
-            .gramajMediu{
+        .row {
+          .col-6 {
+            .gramajMediu {
             }
-            .gramajMare{
+            .gramajMare {
             }
           }
         }
@@ -280,25 +311,23 @@
       .col-10.offset-1 {
         .row.extras {
           .col-4 {
-            h4, p {
+            h4,
+            p {
               font-size: 1.4em;
             }
 
             h4 {
               padding-top: 3px;
             }
-
           }
         }
       }
     }
 
     .transport {
-
       font-size: 1.4em;
     }
   }
-
 }
 
 @include media-breakpoint-up(lg) {
@@ -323,30 +352,32 @@
       .card-body {
         div {
           .btn-danger {
-           display: none;
+            display: none;
           }
         }
       }
     }
 
     .row.extra {
+      .col-4--crispy {
+        .p__crispy {
+          font-size: 1.6em;
+        }
+      }
+
       .col-10.offset-1 {
         .row.extras {
           .col-4 {
-            h4, p {
+            h4,
+            p {
               font-size: 1.6em;
             }
-
-
-
           }
         }
       }
     }
 
-
     .transport {
-
       font-size: 1.5em;
     }
   }
@@ -367,8 +398,10 @@
       .btn {
       }
     }
-
-
+    .row--crispy {
+      margin-left: 25%;
+      max-width: 66.666667%;
+    }
     .card {
       .card-body {
         .card-title {
@@ -380,16 +413,17 @@
         }
 
         .row {
+          .pret--crispy {
+            font-size: 1.6em;
+          }
           .col-6 {
             font-size: 1.2em;
           }
         }
-
       }
     }
 
     .transport {
-
       margin-top: 60px;
       padding-bottom: 60px;
     }
